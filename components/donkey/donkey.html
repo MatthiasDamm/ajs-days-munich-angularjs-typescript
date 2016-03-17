@@ -1,0 +1,213 @@
+<section class="donkey">
+  <div class="head">
+    <div class="jaws">
+      <div class="nare nare-left"></div>
+      <div class="nare nare-right"></div>
+    </div>
+    <div class="ear ear-left"></div>
+    <div class="ear ear-right"></div>
+    <div class="eye eye-left">
+      <div class="iris"></div>
+    </div>
+    <div class="eye eye-right">
+      <div class="iris"></div>
+    </div>
+  </div>
+  <div class="body">
+    <div class="leg leg-front-right"><div class="foot"></div></div>
+    <div class="leg leg-front-left"><div class="foot"></div></div>
+    <div class="leg leg-back-right"><div class="foot"></div></div>
+    <div class="leg leg-back-left"><div class="foot"></div></div>
+  </div>
+</section>
+<div class="ground"></div>
+
+<style>
+  .ground {
+    position: absolute;
+    background-color: green;
+    height: 16em;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -2;
+  }
+  
+  .donkey, .donkey * {
+    box-sizing: border-box;
+  }
+  
+  .donkey {
+    position: absolute;
+    bottom: 3em;
+    right: 30vw;
+    height: 15em;
+    width: 10em;
+    font-size: {{$ctrl.data.size + 'em'}};
+  }
+  
+  .donkey .head {
+    border: 2px black solid;
+    transform: rotate({{$ctrl.data.headRotation + 'deg'}});
+    border-radius: 4em 4em 0 0;
+    border-bottom: none;
+    position: absolute;
+    height: 5em;
+    width: 4em;
+    left: 1.4em;
+    top: 1.4em;
+    background-color: {{$ctrl.data.coatColor}};
+  }
+  
+  .donkey .jaws {
+    border: 2px black solid;
+    border-radius: .5em .5em 2em 2em;
+    position: absolute;
+    height: 4em;
+    width: 5em;
+    bottom: -4em;
+    left: -.6em;
+    background-color: {{$ctrl.data.jawsColor}};
+  }
+  
+  .donkey .jaws .nare {
+    position: absolute;
+    top: .5em;
+    background-color: {{$ctrl.data.coatColor}};
+    height: .8em;
+    width: .8em;
+    border-radius: 9999em;
+  }
+  .donkey .jaws .nare-left { left: .5em; }
+  .donkey .jaws .nare-right { right: .5em; }
+  
+  .donkey .eye {
+    animation: rotate-eyes 10s infinite;
+    border: 2px black solid;
+    position: absolute;
+    height: 3em;
+    width: 3em;
+    top: 1em;
+    border-radius: 9999em;
+    background-color: white;
+  }
+  
+  .donkey .eye-left {
+    left: -0.75em;
+  }
+  .donkey .eye-right {
+    left: 1.25em;
+  }
+  
+  @keyframes rotate-eyes {
+    0% {
+      transform: rotate(0)
+    }
+    25% {
+      transform: rotate(-80deg)
+    }
+    50% {
+      transform: rotate(45deg)
+    }
+  }
+  
+  .donkey .eye .iris {
+    position: absolute;
+    top: 1.5em;
+    left: .5em;
+    background-color: black;
+    height: .5em;
+    width: .5em;
+    border-radius: 9999em;
+  }
+  
+  .donkey .head .ear {
+    position: absolute;
+    border: 2px black solid;
+    border-radius: 0 0 4em 4em;
+    top: -.8em;
+    height: 1.5em;
+    width: 3em;
+    background-color: {{$ctrl.data.earColor}};
+  }
+  
+  .donkey .head .ear-left {
+    transform: rotate(30deg);
+    left: -2em;
+  }
+  
+  .donkey .head .ear-right {
+    transform: rotate(-30deg);
+    right: -2em;
+  }
+  
+  .donkey .body {
+    position: absolute;
+    border: 2px black solid;
+    border-radius: 0 2em 0 0;
+    background-color: {{$ctrl.data.coatColor}};
+    z-index: -1;
+    height: 8em;
+    width: 6em;
+    top: 4em;
+    left: 4em;
+  }
+  
+  .donkey .leg {
+    position: absolute;
+    border: 2px black solid;
+    background-color: {{$ctrl.data.coatColor}};
+    height: 2em;
+    width: 1.5em;
+    bottom: -2em;
+  }
+  
+  .donkey .leg-front-right {
+    left: -2px;
+    height: 1.6em;
+    bottom: -1.6em;
+    z-index: -1;
+  }
+  
+  .donkey .leg-front-left {
+    border-top: none;
+    left: .5em;
+  }
+  .donkey .leg-back-right {
+    right: .5em;
+    height: 1.6em;
+    bottom: -1.6em;
+    z-index: -1;
+  }
+  
+  .donkey .leg-back-left {
+    border-top: none;
+    right: -2px;
+  }
+  
+  .donkey .foot:before {
+    position: absolute;
+    top: 0;
+    left: -.4em;
+    content: '';
+    width: 1em;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 .8em .4em;
+    border-color: transparent transparent black transparent;
+  }
+  
+  .donkey .foot {
+    position: absolute;
+    top: 2em;
+    left: -2px;
+    content: '';
+    width: 1.5em;
+    height: .8em;
+    background-color: black;
+  }
+  .donkey .leg-front-right .foot,
+  .donkey .leg-back-right .foot {
+    top: 1.4em;
+  }
+</style>

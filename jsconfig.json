@@ -1,0 +1,9 @@
+{
+  "files": [
+    "typings/browser.d.ts",
+    "app.js",
+    "components/donkey/donkey.js",
+    "components/donkey-control/donkey-control.js",
+    "services/donkey-data/donkey-data.js"
+  ]
+}
